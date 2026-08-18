@@ -1,4 +1,4 @@
-const CACHE_NAME = "azkar-pwa-v2";
+const CACHE_NAME = "azkar-pwa-v6";
 const ASSETS_TO_CACHE = [
   "./",
   "./index.html",
