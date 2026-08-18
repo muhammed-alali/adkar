@@ -1,7 +1,7 @@
-const CACHE_NAME = "azkar-pwa-v1";
+const CACHE_NAME = "azkar-pwa-v2";
 const ASSETS_TO_CACHE = [
   "./",
-  "./اذكار.html",
+  "./index.html",
   "./site.webmanifest",
   "./icon.svg",
   "./icon-192.png",
@@ -15,11 +15,15 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     caches
       .open(CACHE_NAME)
-      .then((cache) => {
+      .then(async (cache) => {
         console.log("[SW] Pre-caching offline assets");
-        return cache.addAll(ASSETS_TO_CACHE).catch((err) => {
-          console.warn("[SW] Caching failed for some resources:", err);
-        });
+        for (const asset of ASSETS_TO_CACHE) {
+          try {
+            await cache.add(asset);
+          } catch (err) {
+            console.warn("[SW] Caching failed for asset:", asset, err);
+          }
+        }
       })
       .then(() => self.skipWaiting()),
   );
@@ -83,7 +87,7 @@ self.addEventListener("fetch", (event) => {
         .catch(() => {
           // Offline fallback
           if (event.request.headers.get("accept").includes("text/html")) {
-            return caches.match("./اذكار.html");
+            return caches.match("./index.html");
           }
         });
     }),

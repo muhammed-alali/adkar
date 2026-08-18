@@ -923,16 +923,16 @@
             /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
           if (isIOS) {
             alert(
-              'لتثبيت التطبيق على الآيفون:\n1. اضغط زر المشاركة (Share ⎋) بأسفل المتصفح.\n2. اختر "إضافة إلى الشاشة الرئيسية ➕".',
+              'لتثبيت التطبيق على الآيفون:\n1. اضغط زر المشاركة (Share ⎋) في أسفل المتصفح Safari.\n2. اختر "إضافة إلى الشاشة الرئيسية ➕".',
+            );
+          } else if (window.location.protocol === "file:") {
+            alert(
+              'تنبيه: لتثبيت التطبيق على هاتفك أو كمبيوترك، يجب رفع الموقع على سيرفر أو رابط (مثل GitHub Pages أو Netlify) بدلاً من فتحه كملف محلي (file://).\nتقنيات PWA تتطلب بروتوكول HTTP/HTTPS لتعمل تلقائياً.',
             );
           } else {
-            showToast("جاري تنزيل ملف site.webmanifest...");
-            const a = document.createElement("a");
-            a.href = "site.webmanifest";
-            a.download = "site.webmanifest";
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
+            alert(
+              'لتثبيت التطبيق على جهازك:\n1. اضغط على خيارات المتصفح (⋮ القائمة في الأعلى أو الأسفل).\n2. اختر "التثبيت" أو "الإضافة إلى الشاشة الرئيسية" (Add to Home Screen).',
+            );
           }
         }
       }

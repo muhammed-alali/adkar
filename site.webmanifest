@@ -2,7 +2,7 @@
   "name": "أذكار الصباح والمساء - حصن المسلم",
   "short_name": "الأذكار",
   "description": "تطبيق أذكار الصباح والمساء التفاعلي بحجم خط كبير وقراءة واضحة مع إمكانية التكرار والتحميل PDF والعمل كاملاً بدون إنترنت PWA",
-  "start_url": "./اذكار.html",
+  "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "background_color": "#0f8a5f",
