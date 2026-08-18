@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a6344" />
+      <stop offset="50%" stop-color="#0f8a5f" />
+      <stop offset="100%" stop-color="#07452f" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe28a" />
+      <stop offset="50%" stop-color="#c59b27" />
+      <stop offset="100%" stop-color="#9a7413" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Card -->
+  <rect width="512" height="512" rx="110" fill="url(#bgGrad)" />
+  
+  <!-- Gold Outer Border Ring -->
+  <rect x="20" y="20" width="472" height="472" rx="90" fill="none" stroke="url(#goldGrad)" stroke-width="8" opacity="0.8" />
+  <rect x="32" y="32" width="448" height="448" rx="78" fill="none" stroke="url(#goldGrad)" stroke-width="2" opacity="0.5" />
+  
+  <!-- Central Crescent & Star Emblem -->
+  <g transform="translate(256, 230)">
+    <!-- Crescent Moon -->
+    <path d="M 10 -90 A 90 90 0 1 0 90 30 A 72 72 0 1 1 10 -90 Z" fill="url(#goldGrad)" />
+    <!-- Star -->
+    <polygon points="50,-40 59,-12 88,-12 64,5 73,33 50,15 27,33 36,5 12,-12 41,-12" fill="url(#goldGrad)" />
+  </g>
+  
+  <!-- Arabic Text below emblem: الأذكار -->
+  <text x="256" y="420" font-family="'Amiri', 'Cairo', serif" font-weight="bold" font-size="64" fill="url(#goldGrad)" text-anchor="middle">الأذكار</text>
+</svg>
